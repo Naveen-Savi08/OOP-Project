@@ -1,0 +1,1 @@
+In this application there is a sacms.sql file in resources file. please open it using phpmyadmin and actiavate Apache and MySQL servers using XAMPP Control Panel and if there is a error when executing the program. please put the JAR packages of sql jdbc connector and jasperreports packages in order to work!.

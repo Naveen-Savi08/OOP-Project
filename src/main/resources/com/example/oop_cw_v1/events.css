@@ -1,0 +1,35 @@
+
+#sidePaneForEvents{
+    -fx-background-color: #FFFDD0;
+}
+#createEventButton{
+
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #black;
+
+}
+#createEventButton:hover{
+    -fx-background-color: white;
+}
+
+#paneBeforeButton{
+    -fx-background-color: #FDFD96;
+}
+
+
+
+#panenearbuttons{
+    -fx-background-color: #97c95c;
+}
+
+#pane2nearbutton{
+    -fx-background-color: #8aecff;
+}
+
+#paneNextToContentInCreateEvents{
+    -fx-background-color: white;
+}
+

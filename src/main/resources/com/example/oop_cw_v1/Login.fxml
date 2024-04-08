@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_cw_v1.HelloController">
+   <children>
+      <AnchorPane fx:id="studentLoginPane" prefHeight="200.0" prefWidth="200.0" visible="false">
+         <children>
+            <BorderPane prefHeight="500.0" prefWidth="700.0">
+               <left>
+                  <AnchorPane prefHeight="500.0" prefWidth="375.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Pane layoutX="1.0" layoutY="-2.0" prefHeight="550.0" prefWidth="310.0">
+                           <children>
+                              <Label layoutX="59.0" layoutY="26.0" prefHeight="49.0" prefWidth="201.0" text="Student Login" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="30.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="loginStudentEmailField" layoutX="34.0" layoutY="118.0" prefHeight="39.0" prefWidth="239.0" promptText="Student ID">
+                                 <cursor>
+                                    <Cursor fx:constant="TEXT" />
+                                 </cursor>
+                              </TextField>
+                              <Label fx:id="label_forgotPw" layoutX="175.0" layoutY="258.0" text="Forgot password?" underline="true">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                              <Button fx:id="btn_login" layoutX="34.0" layoutY="283.0" mnemonicParsing="false" onAction="#loginStudentClick" prefHeight="39.0" prefWidth="239.0" text="Login">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Label fx:id="label_registerNow" layoutX="31.0" layoutY="428.0" onMouseClicked="#switchToStudentRegisterNow" onMousePressed="#switchToStudentRegisterNow" text="Don't have an account? Register now!" underline="true">
+                              <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                              <Group layoutX="52.0" layoutY="277.0" />
+                              <Button fx:id="btn_google" layoutX="34.0" layoutY="361.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="239.0" text="Log in with Google">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0">
+                                       <image>
+                                          <Image url="@../../../Images/google-removebg-preview.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Label fx:id="label_error" layoutX="34.0" layoutY="177.0" prefHeight="17.0" prefWidth="238.0" textFill="red" />
+                              <Line endX="91.00003051757812" layoutX="196.0" layoutY="344.0" startX="-20.400001525878906" />
+                              <Label layoutX="153.0" layoutY="331.0" text="or">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="91.00003051757812" layoutX="52.0" layoutY="344.0" startX="-20.400001525878906" />
+                              <Button layoutX="25.0" layoutY="503.0" mnemonicParsing="false" onAction="#backToFrontPaneClick" text="Back" />
+                              <PasswordField fx:id="loginStudentPasswordField" layoutX="34.0" layoutY="182.0" prefHeight="36.0" prefWidth="239.0" promptText="Password" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <right>
+                  <AnchorPane prefHeight="500.0" prefWidth="325.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <ImageView fitHeight="550.0" fitWidth="422.0" layoutX="-46.0">
+                           <image>
+                              <Image url="@../../../Images/a2904511b25859f35d7fda94e79188ed.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </right>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+      <StackPane fx:id="studentRegisterPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="750.0" visible="false">
+         <children>
+            <AnchorPane prefHeight="562.0" prefWidth="824.0">
+               <children>
+                  <BorderPane layoutY="-1.0" prefHeight="562.0" prefWidth="754.0">
+                     <left>
+                        <AnchorPane prefHeight="626.0" prefWidth="391.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <ImageView fitHeight="550.0" fitWidth="382.0" layoutX="-7.0" layoutY="11.0">
+                                 <image>
+                                    <Image url="@../../../Images/27ca4beb925c849b2f30b3d93a607003.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </left>
+                     <right>
+                        <AnchorPane prefHeight="571.0" prefWidth="339.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Group layoutX="14.0" layoutY="30.0">
+                                 <children>
+                                    <Pane layoutX="-16.0" layoutY="-13.0" prefHeight="555.0" prefWidth="390.0">
+                                       <children>
+                                          <Label layoutX="60.0" layoutY="14.0" prefHeight="49.0" prefWidth="247.0" text="Student Register" textAlignment="CENTER">
+                                             <font>
+                                                <Font name="System Bold" size="30.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="studentFirstNameField" layoutX="27.0" layoutY="95.0" prefHeight="35.0" prefWidth="148.0" promptText="First Name">
+                                             <cursor>
+                                                <Cursor fx:constant="TEXT" />
+                                             </cursor>
+                                          </TextField>
+                                          <TextField fx:id="studentEmailField" layoutX="31.0" layoutY="302.0" prefHeight="35.0" prefWidth="300.0" promptText="Email">
+                                             <cursor>
+                                                <Cursor fx:constant="TEXT" />
+                                             </cursor>
+                                          </TextField>
+                                          <Button layoutX="225.0" layoutY="484.0" mnemonicParsing="false" onAction="#studentRegisterClick" prefHeight="19.0" prefWidth="107.0" text="Submit">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                          <TextField fx:id="studentLastNameField" layoutX="183.0" layoutY="95.0" prefHeight="35.0" prefWidth="148.0" promptText="Last Name">
+                                             <cursor>
+                                                <Cursor fx:constant="TEXT" />
+                                             </cursor>
+                                          </TextField>
+                                          <TextField fx:id="studentGenderField" layoutX="31.0" layoutY="171.0" prefHeight="35.0" prefWidth="300.0" promptText="Gender">
+                                             <cursor>
+                                                <Cursor fx:constant="TEXT" />
+                                             </cursor>
+                                          </TextField>
+                                          <TextField fx:id="studentcontactNumberField" layoutX="31.0" layoutY="247.0" prefHeight="35.0" prefWidth="300.0" promptText="Contact Number">
+                                             <cursor>
+                                                <Cursor fx:constant="TEXT" />
+                                             </cursor>
+                                          </TextField>
+                                          <DatePicker fx:id="studentDoBField" layoutX="31.0" layoutY="209.0" prefHeight="35.0" prefWidth="300.0" promptText="Date of Birth">
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </DatePicker>
+                                          <Label layoutX="30.0" layoutY="70.0" text="Enter your personal details" />
+                                          <TextField fx:id="studentIDField" layoutX="29.0" layoutY="133.0" prefHeight="35.0" prefWidth="300.0" promptText="Student ID">
+                                             <cursor>
+                                                <Cursor fx:constant="TEXT" />
+                                             </cursor>
+                                          </TextField>
+                                          <PasswordField fx:id="studentpasswordField" layoutX="29.0" layoutY="347.0" prefHeight="35.0" prefWidth="300.0" promptText="Password">
+                                             <cursor>
+                                                <Cursor fx:constant="TEXT" />
+                                             </cursor>
+                                          </PasswordField>
+                                          <PasswordField fx:id="studentReEnterPasswordField" layoutX="29.0" layoutY="393.0" prefHeight="35.0" prefWidth="300.0" promptText="Re-enter password">
+                                             <cursor>
+                                                <Cursor fx:constant="TEXT" />
+                                             </cursor>
+                                          </PasswordField>
+                                          <Label layoutX="32.0" layoutY="284.0" text="Enter your account details" />
+                                          <CheckBox fx:id="studentCheckBox" layoutX="32.0" layoutY="458.0" mnemonicParsing="false" text="I agree to the terms and conditions">
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </CheckBox>
+                                          <Button fx:id="btn_back" layoutX="29.0" layoutY="483.0" mnemonicParsing="false" onAction="#switchToStudentLogin" prefHeight="19.0" prefWidth="107.0" text="Back">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </Group>
+                           </children>
+                        </AnchorPane>
+                     </right>
+                  </BorderPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+      <StackPane fx:id="advisorRegisterPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="750.0" visible="false">
+         <children>
+            <AnchorPane prefHeight="562.0" prefWidth="824.0">
+               <children>
+                  <BorderPane layoutY="-1.0" prefHeight="562.0" prefWidth="754.0">
+                     <left>
+                        <AnchorPane prefHeight="626.0" prefWidth="391.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <ImageView fitHeight="550.0" fitWidth="382.0" layoutX="-7.0" layoutY="11.0">
+                                 <image>
+                                    <Image url="@../../../Images/27ca4beb925c849b2f30b3d93a607003.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </left>
+                     <right>
+                        <AnchorPane prefHeight="571.0" prefWidth="339.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Group layoutX="14.0" layoutY="30.0">
+                                 <children>
+                                    <Pane layoutX="-16.0" layoutY="-13.0" prefHeight="555.0" prefWidth="390.0">
+                                       <children>
+                                          <Label layoutX="60.0" layoutY="14.0" prefHeight="49.0" prefWidth="247.0" text="Advisor Register" textAlignment="CENTER">
+                                             <font>
+                                                <Font name="System Bold" size="30.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="advisorFirstNameField" layoutX="27.0" layoutY="95.0" prefHeight="35.0" prefWidth="148.0" promptText="First Name">
+                                             <cursor>
+                                                <Cursor fx:constant="TEXT" />
+                                             </cursor>
+                                          </TextField>
+                                          <TextField fx:id="advisorEmailField" layoutX="31.0" layoutY="302.0" prefHeight="35.0" prefWidth="300.0" promptText="Email">
+                                             <cursor>
+                                                <Cursor fx:constant="TEXT" />
+                                             </cursor>
+                                          </TextField>
+                                          <Button layoutX="225.0" layoutY="484.0" mnemonicParsing="false" onAction="#advisorRegisterClick" prefHeight="19.0" prefWidth="107.0" text="Submit">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                          <TextField fx:id="advisorLastNameField" layoutX="183.0" layoutY="95.0" prefHeight="35.0" prefWidth="148.0" promptText="Last Name">
+                                             <cursor>
+                                                <Cursor fx:constant="TEXT" />
+                                             </cursor>
+                                          </TextField>
+                                          <TextField fx:id="advisorGenderField" layoutX="31.0" layoutY="171.0" prefHeight="35.0" prefWidth="300.0" promptText="Gender">
+                                             <cursor>
+                                                <Cursor fx:constant="TEXT" />
+                                             </cursor>
+                                          </TextField>
+                                          <TextField fx:id="advisorContactNumberField" layoutX="31.0" layoutY="247.0" prefHeight="35.0" prefWidth="300.0" promptText="Contact Number">
+                                             <cursor>
+                                                <Cursor fx:constant="TEXT" />
+                                             </cursor>
+                                          </TextField>
+                                          <DatePicker fx:id="advisorDoBField" layoutX="31.0" layoutY="209.0" prefHeight="35.0" prefWidth="300.0" promptText="Date of Birth">
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </DatePicker>
+                                          <Label layoutX="30.0" layoutY="70.0" text="Enter your personal details" />
+                                          <TextField fx:id="advisorIDField" layoutX="29.0" layoutY="133.0" prefHeight="35.0" prefWidth="300.0" promptText="Advisor ID">
+                                             <cursor>
+                                                <Cursor fx:constant="TEXT" />
+                                             </cursor>
+                                          </TextField>
+                                          <PasswordField fx:id="advisorPasswordField" layoutX="29.0" layoutY="351.0" prefHeight="35.0" prefWidth="300.0" promptText="Password">
+                                             <cursor>
+                                                <Cursor fx:constant="TEXT" />
+                                             </cursor>
+                                          </PasswordField>
+                                          <PasswordField fx:id="advisorReEnterPasswordField" layoutX="29.0" layoutY="399.0" prefHeight="35.0" prefWidth="300.0" promptText="Re-enter password">
+                                             <cursor>
+                                                <Cursor fx:constant="TEXT" />
+                                             </cursor>
+                                          </PasswordField>
+                                          <Label layoutX="32.0" layoutY="284.0" text="Enter your account details" />
+                                          <CheckBox fx:id="advisorCheckBox" layoutX="32.0" layoutY="458.0" mnemonicParsing="false" text="I agree to the terms and conditions">
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </CheckBox>
+                                          <Button fx:id="btn_back1" layoutX="29.0" layoutY="483.0" mnemonicParsing="false" onAction="#switchToAdvisorLogin" prefHeight="19.0" prefWidth="107.0" text="Back">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </Group>
+                           </children>
+                        </AnchorPane>
+                     </right>
+                  </BorderPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+      <AnchorPane fx:id="advisorLoginAnchorPane" prefHeight="200.0" prefWidth="200.0" visible="false">
+         <children>
+            <BorderPane prefHeight="500.0" prefWidth="700.0">
+               <left>
+                  <AnchorPane prefHeight="500.0" prefWidth="375.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Pane layoutX="1.0" layoutY="-2.0" prefHeight="550.0" prefWidth="310.0">
+                           <children>
+                              <Label layoutX="63.0" layoutY="31.0" prefHeight="49.0" prefWidth="216.0" text="Advisor Login" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="30.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="loginAdvisorEmaillField" layoutX="34.0" layoutY="119.0" prefHeight="39.0" prefWidth="239.0" promptText="Advisor ID">
+                                 <cursor>
+                                    <Cursor fx:constant="TEXT" />
+                                 </cursor>
+                              </TextField>
+                              <Label fx:id="label_forgotPw1" layoutX="175.0" layoutY="258.0" text="Forgot password?" underline="true">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                              <Button fx:id="btn_login1" layoutX="34.0" layoutY="283.0" mnemonicParsing="false" onAction="#loginAdvisorClick" prefHeight="39.0" prefWidth="239.0" text="Login">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Label fx:id="label_registerNow1" layoutX="45.0" layoutY="430.0" onMouseClicked="#switchToAdvisorRegisterNow" onMousePressed="#switchToAdvisorRegisterNow" text="Don't have an account? Register now!" underline="true">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                              <Group layoutX="52.0" layoutY="277.0" />
+                              <Button fx:id="btn_google1" layoutX="34.0" layoutY="360.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="239.0" text="Log in with Google">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0">
+                                       <image>
+                                          <Image url="@../../../Images/google-removebg-preview.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Label fx:id="label_error1" layoutX="34.0" layoutY="177.0" prefHeight="17.0" prefWidth="238.0" textFill="red" />
+                              <Line endX="91.00003051757812" layoutX="196.0" layoutY="344.0" startX="-20.400001525878906" />
+                              <Label layoutX="153.0" layoutY="331.0" text="or">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="91.00003051757812" layoutX="52.0" layoutY="344.0" startX="-20.400001525878906" />
+                              <Button layoutX="19.0" layoutY="511.0" mnemonicParsing="false" onAction="#backToFrontPaneClick" text="Back" />
+                              <PasswordField fx:id="loginAdvisorPasswordField" layoutX="34.0" layoutY="182.0" prefHeight="37.0" prefWidth="238.0" promptText="Password" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <right>
+                  <AnchorPane prefHeight="500.0" prefWidth="325.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <ImageView fitHeight="550.0" fitWidth="422.0" layoutX="-46.0">
+                           <image>
+                              <Image url="@../../../Images/a2904511b25859f35d7fda94e79188ed.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </right>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="studentMainPane" prefHeight="200.0" prefWidth="200.0" visible="false">
+         <children>
+            <Pane fx:id="studentTaskBarPane" prefHeight="550.0" prefWidth="126.0" style="-fx-background-color: lightblue;">
+               <children>
+                  <Label alignment="CENTER" layoutX="13.0" layoutY="171.0" prefHeight="57.0" prefWidth="91.0" style="-fx-background-color: lightgreen;" text="DashBorad" />
+                  <Label alignment="CENTER" layoutX="13.0" layoutY="260.0" prefHeight="57.0" prefWidth="91.0" style="-fx-background-color: lightgreen;" text="Clubs" />
+                  <Button layoutX="18.0" layoutY="175.0" mnemonicParsing="false" onAction="#studentDashboradClick" opacity="0.0" prefHeight="51.0" prefWidth="82.0" />
+                  <Button layoutX="12.0" layoutY="265.0" mnemonicParsing="false" onAction="#studentClubViewClick" opacity="0.0" prefHeight="51.0" prefWidth="85.0" />
+                  <Button layoutX="34.0" layoutY="491.0" mnemonicParsing="false" onAction="#backToFrontPaneClick" text="Back" />
+               </children>
+            </Pane>
+            <Pane fx:id="studentDashBoardPane" layoutX="126.0" prefHeight="550.0" prefWidth="624.0" visible="false">
+               <children>
+                  <Label layoutX="137.0" layoutY="14.0" prefHeight="57.0" prefWidth="292.0" text="     Account Details">
+                     <font>
+                        <Font size="31.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="65.0" layoutY="87.0" text="Name -">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="63.0" layoutY="126.0" text="Student ID - ">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="60.0" layoutY="161.0" text="Gender -">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="59.0" layoutY="193.0" text="Date of Birth -">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="225.0" text="Email -">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="263.0" text="Contact Number -">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="studentnameLabel" layoutX="192.0" layoutY="88.0" prefHeight="25.0" prefWidth="82.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="studentIdLabel" layoutX="193.0" layoutY="126.0" prefHeight="25.0" prefWidth="182.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="studentGenderLabel" layoutX="193.0" layoutY="161.0" prefHeight="17.0" prefWidth="392.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="studentDoBLabel" layoutX="193.0" layoutY="193.0" prefHeight="17.0" prefWidth="392.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="studentEmailLabel" layoutX="193.0" layoutY="225.0" prefHeight="17.0" prefWidth="392.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="studentContactNumberLabel" layoutX="193.0" layoutY="263.0" prefHeight="17.0" prefWidth="392.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="studentlastnameLabel" layoutX="281.0" layoutY="88.0" prefHeight="25.0" prefWidth="82.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="248.0" fitWidth="254.0" layoutX="147.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Images/student_profile.gif" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="studentClubPane" layoutX="126.0" prefHeight="550.0" prefWidth="624.0" visible="false">
+               <children>
+                  <Label layoutX="225.0" layoutY="9.0" prefHeight="66.0" prefWidth="214.0" text="Clubs">
+                     <font>
+                        <Font size="39.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="studentClubSearchField" layoutX="58.0" layoutY="84.0" prefHeight="25.0" prefWidth="182.0" promptText="Eg - C01" />
+                  <Button layoutX="248.0" layoutY="84.0" mnemonicParsing="false" text="Search" />
+                  <TableView fx:id="studentClubTableView" layoutX="4.0" layoutY="124.0" prefHeight="309.0" prefWidth="617.0">
+                    <columns>
+                      <TableColumn fx:id="studentClubIdCol" prefWidth="73.60003662109375" text="Club ID" />
+                      <TableColumn fx:id="studentClubNameCol" prefWidth="125.60005187988281" text="Club Name" />
+                        <TableColumn fx:id="studentClubMemeberCol" prefWidth="68.0" text="Members" />
+                        <TableColumn fx:id="studentClubDescriptionCol" prefWidth="172.0" text="Description" />
+                        <TableColumn fx:id="studentSportCol" prefWidth="84.7999267578125" text="Sport" />
+                        <TableColumn fx:id="studentAcedemicCol" prefWidth="93.60009765625" text="AcademicType" />
+                    </columns>
+                  </TableView>
+                  <Button layoutX="220.0" layoutY="458.0" mnemonicParsing="false" onAction="#studentClubJoinClick" prefHeight="50.0" prefWidth="108.0" text="Join">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="advisorMainPane" prefHeight="200.0" prefWidth="200.0" visible="false">
+         <children>
+            <Pane fx:id="studentTaskBarPane1" prefHeight="550.0" prefWidth="126.0" style="-fx-background-color: lightblue;">
+               <children>
+                  <Label alignment="CENTER" layoutX="13.0" layoutY="198.0" prefHeight="30.0" prefWidth="91.0" style="-fx-background-color: lightgreen;" text="DashBorad" />
+                  <Label alignment="CENTER" layoutX="14.0" layoutY="240.0" prefHeight="30.0" prefWidth="91.0" style="-fx-background-color: lightgreen;" text="Clubs" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="282.0" prefHeight="30.0" prefWidth="91.0" style="-fx-background-color: lightgreen;" text="Events" textAlignment="CENTER" />
+                  <Button layoutX="18.0" layoutY="201.0" mnemonicParsing="false" onAction="#advisorDashboardClick" opacity="0.0" prefHeight="25.0" prefWidth="82.0" />
+                  <Button layoutX="18.0" layoutY="243.0" mnemonicParsing="false" onAction="#advisiorClubViewClick" opacity="0.0" prefHeight="25.0" prefWidth="82.0" />
+                  <Button alignment="CENTER" layoutX="18.0" layoutY="284.0" mnemonicParsing="false" onAction="#advisorEventViewClick" opacity="0.0" prefHeight="25.0" prefWidth="85.0" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="324.0" prefHeight="30.0" prefWidth="91.0" style="-fx-background-color: lightgreen;" text="Attendance" textAlignment="CENTER" />
+                  <Button alignment="CENTER" layoutX="18.0" layoutY="326.0" mnemonicParsing="false" onAction="#advisorAttendenceTrackingViewClick" opacity="0.0" prefHeight="25.0" prefWidth="85.0" />
+                  <Button layoutX="33.0" layoutY="491.0" mnemonicParsing="false" onAction="#backToFrontPaneClick" text="Back" />
+               </children>
+            </Pane>
+            <Pane fx:id="advisorDashBoardPane" layoutX="126.0" layoutY="7.0" prefHeight="550.0" prefWidth="624.0">
+               <children>
+                  <Label layoutX="137.0" layoutY="14.0" prefHeight="57.0" prefWidth="292.0" text="     Account Details">
+                     <font>
+                        <Font size="31.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="65.0" layoutY="87.0" text="Name -">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="63.0" layoutY="126.0" text="Advisor ID - ">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="60.0" layoutY="161.0" text="Gender -">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="59.0" layoutY="193.0" text="Date of Birth -">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="225.0" text="Email -">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="263.0" text="Contact Number -">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="advisorFirstNameLabel" layoutX="192.0" layoutY="88.0" prefHeight="25.0" prefWidth="99.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="advisorIdLabel" layoutX="193.0" layoutY="126.0" prefHeight="17.0" prefWidth="392.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="advisorGenderLabel" layoutX="193.0" layoutY="161.0" prefHeight="17.0" prefWidth="392.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="advisorDoBLabel" layoutX="193.0" layoutY="193.0" prefHeight="17.0" prefWidth="392.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="advisorEmailLabel" layoutX="193.0" layoutY="225.0" prefHeight="17.0" prefWidth="392.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="advisorContactnumberLabel" layoutX="193.0" layoutY="263.0" prefHeight="17.0" prefWidth="392.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="advisorLastNameLabel" layoutX="256.0" layoutY="87.0" prefHeight="25.0" prefWidth="99.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="173.0" fitWidth="200.0" layoutX="155.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@The%20Advisor.gif" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="frontPane" prefHeight="200.0" prefWidth="200.0" visible="false">
+         <children>
+            <ImageView fitHeight="453.0" fitWidth="466.0" layoutX="299.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/70faf4fd62cfbfe6e53c44cd0afee403.jpg" />
+               </image>
+            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#061e24" height="591.0" layoutX="-20.0" layoutY="-5.0" rotate="4.0" stroke="BLACK" strokeType="INSIDE" width="354.0" />
+            <Button layoutX="65.0" layoutY="332.0" mnemonicParsing="false" onAction="#advisorLoginClick" prefHeight="44.0" prefWidth="231.0" text="Advisor">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="65.0" layoutY="430.0" mnemonicParsing="false" onAction="#studentLoginClick" prefHeight="44.0" prefWidth="231.0" text="Student">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fitHeight="327.0" fitWidth="341.0" layoutY="-17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/Club_Navigator.-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="30.0" layoutY="256.0" text="Choose Profile:" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <Circle fill="#29dba0" layoutX="80.0" layoutY="354.0" radius="45.0" stroke="BLACK" strokeType="INSIDE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Circle>
+            <ImageView fitHeight="74.0" fitWidth="101.0" layoutX="30.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/advisor_profile.gif" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Circle fill="#29dba0" layoutX="80.0" layoutY="452.0" radius="45.0" stroke="BLACK" strokeType="INSIDE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Circle>
+            <ImageView fitHeight="74.0" fitWidth="101.0" layoutX="30.0" layoutY="410.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/student_profile.gif" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="frontGifPane" prefHeight="600.0" prefWidth="907.0" style="-fx-background-color: #3D2D5B;">
+         <children>
+            <ImageView fitHeight="533.0" fitWidth="927.0" layoutX="-85.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/Navigator%20GIF.gif" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="75.0" fitWidth="208.0" layoutX="299.0" layoutY="469.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/get%20start1.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="296.0" layoutY="453.0" mnemonicParsing="false" onAction="#getStartClick" opacity="0.0" prefHeight="81.0" prefWidth="214.0" style="-fx-background-color: lihtgreen;" />
+            <ImageView fitHeight="237.0" fitWidth="494.0" layoutX="174.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/new_logo-removebg-preview.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

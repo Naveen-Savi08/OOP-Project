@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="545.0" prefWidth="755.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_cw_v1.EventController">
+   <children>
+      <Pane fx:id="scheduleEventPane" layoutY="-2.0" opacity="0.96" prefHeight="550.0" prefWidth="750.0">
+         <children>
+            <ImageView fitHeight="551.0" fitWidth="350.0" layoutX="409.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@../../../Images/eee279c7d9b4c4e5fc060a9f9bb61c5f.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="33.0" layoutY="57.0" prefHeight="59.0" prefWidth="358.0" text="Scheduling Events" textFill="#030303">
+               <font>
+                  <Font name="System Bold Italic" size="41.0" />
+               </font>
+            </Label>
+            <Button id="createEventButton" layoutX="113.0" layoutY="130.0" mnemonicParsing="false" onAction="#clickCreateBtnClick" prefHeight="66.0" prefWidth="228.0" styleClass="createEventButton" text="Create events">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Button>
+            <Button id="createEventButton" layoutX="113.0" layoutY="239.0" mnemonicParsing="false" onAction="#clickUpdateBtnClick" prefHeight="73.0" prefWidth="228.0" styleClass="createEventButton" text="Update events">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Button>
+            <Button layoutX="113.0" layoutY="343.0" mnemonicParsing="false" onAction="#generateReport" prefHeight="59.0" prefWidth="228.0" text="Generate Report">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font></Button>
+            <Button layoutX="41.0" layoutY="476.0" mnemonicParsing="false" onAction="#backToAdvisorDashboardClick" prefHeight="25.0" prefWidth="60.0" text="Back" />
+         </children>
+      </Pane>
+      <Pane fx:id="selectEventTypeInCreatePane" prefHeight="550.0" prefWidth="758.0" visible="false">
+         <children>
+            <ImageView fitHeight="470.0" fitWidth="551.0" layoutX="284.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/252deb716473c370644ab60bbfb29dd7.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="24.0" layoutY="30.0" text="Create Your Schedule">
+               <font>
+                  <Font name="Arial Bold" size="25.0" />
+               </font>
+            </Label>
+            <Button layoutX="24.0" layoutY="92.0" mnemonicParsing="false" onAction="#eventBtninselectingevents" prefHeight="40.0" prefWidth="123.0" text="Event" />
+            <Button layoutX="24.0" layoutY="190.0" mnemonicParsing="false" onAction="#meetingBtninselectingevents" prefHeight="43.0" prefWidth="123.0" text="Meeting" textFill="#030000" />
+            <Button layoutX="24.0" layoutY="288.0" mnemonicParsing="false" onAction="#workshopBtninselectingevents" prefHeight="43.0" prefWidth="123.0" text="Workshop" />
+            <Button layoutX="29.0" layoutY="461.0" mnemonicParsing="false" onAction="#backBtninselectingevents" prefHeight="43.0" prefWidth="113.0" text="Back to Menu" />
+         </children>
+      </Pane>
+      <Pane fx:id="eventCreationPane" prefHeight="551.0" prefWidth="752.0" visible="false">
+         <children>
+            <Button layoutX="45.0" layoutY="489.0" mnemonicParsing="false" onAction="#onBackbtnincreateevent" text="Back" />
+            <Button layoutX="602.0" layoutY="489.0" mnemonicParsing="false" onAction="#onsavebtnincreateevent" text="Save" />
+            <TextField fx:id="eventtypeincreateevent" layoutX="212.0" layoutY="135.0" promptText="online / physical" />
+            <TextField fx:id="eventdescriptionincreateevent" layoutX="399.0" layoutY="76.0" promptText="Club Id" />
+            <TextField fx:id="eventtimeincreateevent" layoutX="32.0" layoutY="135.0" promptText="Time" />
+            <TextField fx:id="eventlocationincreateevent" layoutX="599.0" layoutY="76.0" promptText="Location" />
+            <TextField fx:id="eventnameincreateevent" layoutX="212.0" layoutY="76.0" promptText="Event name" />
+            <TextField fx:id="eventidincreateevent" layoutX="32.0" layoutY="76.0" promptText="Event id" />
+            <DatePicker fx:id="eventDateincreateevent" layoutX="399.0" layoutY="135.0" />
+            <Label layoutX="32.0" layoutY="26.0" prefHeight="36.0" prefWidth="218.0" text="Create Events">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <TableView fx:id="createEventTable" layoutX="72.0" layoutY="211.0" prefHeight="211.0" prefWidth="621.0">
+              <columns>
+                <TableColumn fx:id="idColumnInCreateEvent" prefWidth="64.79998779296875" text="Schedul Id" />
+                <TableColumn fx:id="nameColumnInCreateEvent" prefWidth="106.4000244140625" text="Schedule Name" />
+                  <TableColumn fx:id="locationColumnInCreateEvent" prefWidth="72.79998779296875" text="location" />
+                  <TableColumn fx:id="descriptionColumnInCreateEvent" prefWidth="134.4000244140625" text="Club Id" />
+                  <TableColumn fx:id="dateColumnInCreateEvent" prefWidth="86.39993286132812" text="Date" />
+                  <TableColumn fx:id="timeColumnInCreateEvent" prefWidth="76.0" text="Time" />
+                  <TableColumn fx:id="eventTypeColumnInCreateEvent" prefWidth="80.800048828125" text="Event Type" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <Pane fx:id="createMeetingPane" prefHeight="551.0" prefWidth="758.0" visible="false">
+         <children>
+            <Label layoutX="28.0" layoutY="24.0" text="Create Meeting">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+            </Label>
+            <TextField fx:id="meetingIdIncreatemeeting" layoutX="28.0" layoutY="88.0" promptText="meeting id" />
+            <TextField fx:id="meetingnameIncreatemeeting" layoutX="218.0" layoutY="88.0" promptText="name" />
+            <TextField fx:id="meetingtypeIncreatemeeting" layoutX="218.0" layoutY="135.0" prefHeight="26.0" prefWidth="211.0" promptText="meeting type(online / physical)" />
+            <TextField fx:id="meetingtimeIncreatemeeting" layoutX="28.0" layoutY="135.0" prefHeight="10.0" prefWidth="151.0" promptText="time" />
+            <TextField fx:id="meetingdescriptionIncreatemeeting" editable="false" layoutX="592.0" layoutY="88.0" promptText="Club Id" />
+            <TextField fx:id="meetinglocationIncreatemeeting" layoutX="420.0" layoutY="88.0" promptText="location" />
+            <DatePicker fx:id="meetingdateIncreatemeeting" layoutX="452.0" layoutY="135.0" promptText="date" />
+            <Button layoutX="50.0" layoutY="466.0" mnemonicParsing="false" onAction="#onBackBtnInCreateMeeting" text="back" />
+            <Button layoutX="632.0" layoutY="466.0" mnemonicParsing="false" onAction="#onsaveBtnIncreatemeeting" text="save" />
+            <TableView fx:id="createMeetingTable" layoutX="59.0" layoutY="192.0" prefHeight="234.0" prefWidth="655.0">
+              <columns>
+                <TableColumn fx:id="nameColumnInCreateMeeting" prefWidth="85.60001373291016" text="Name" />
+                  <TableColumn fx:id="locationColumnInCreateMeeting" prefWidth="91.99996948242188" text="Location" />
+                  <TableColumn fx:id="descriptionColumnInCreateMeeting" prefWidth="124.800048828125" text="Club Id" />
+                  <TableColumn fx:id="dateColumnInCreateMeeting" prefWidth="88.79998779296875" text="Date" />
+                  <TableColumn fx:id="timeColumnInCreateMeeting" prefWidth="81.60000610351562" text="Time" />
+                  <TableColumn fx:id="meetingTypeColumnInCreateMeeting" prefWidth="98.39996337890625" text="meeting type" />
+                <TableColumn fx:id="idColumnInCreateMeeting" prefWidth="84.79998779296875" text="Meeting Id" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <Pane fx:id="createWorkshopPane" prefHeight="550.0" prefWidth="758.0" visible="false">
+         <children>
+            <Label layoutX="35.0" layoutY="28.0" text="Create workshop">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="workshopIdInCreateWorkshop" layoutX="27.0" layoutY="88.0" promptText="Workshop id" />
+            <TextField fx:id="workshopnameInCreateWorkshop" layoutX="199.0" layoutY="88.0" promptText="Workshop name" />
+            <TextField fx:id="workshoplocationInCreateWorkshop" layoutX="205.0" layoutY="145.0" promptText="Location" />
+            <TextField fx:id="workshopTimeInCreateWorkshop" layoutX="558.0" layoutY="88.0" promptText="Time" />
+            <TextField fx:id="workshopConductorInCreateWorkshop" layoutX="27.0" layoutY="145.0" promptText="Workshop conductor" />
+            <TextField fx:id="workshopdescriptionInCreateWorkshop" layoutX="380.0" layoutY="88.0" promptText="Club Id" />
+            <DatePicker fx:id="workshopDateInCreateWorkshop" layoutX="379.0" layoutY="145.0" promptText="Date" />
+            <Button layoutX="66.0" layoutY="478.0" mnemonicParsing="false" onAction="#onBackBtnClickInCreateWorkshop" text="back" />
+            <Button layoutX="597.0" layoutY="471.0" mnemonicParsing="false" onAction="#onSaveBtnClickInCreateWorkshop" text="SAVE" />
+            <TableView fx:id="createWorkshopTable" layoutX="50.0" layoutY="203.0" prefHeight="245.0" prefWidth="677.0">
+              <columns>
+                <TableColumn fx:id="idColumnInCreateWorkshop" prefWidth="99.20001220703125" text="workshop Id" />
+                <TableColumn fx:id="nameColumnInCreateWorkshop" prefWidth="81.59998321533203" text="Name" />
+                  <TableColumn fx:id="locationColumnInCreateWorkshop" prefWidth="100.0" text="Location" />
+                  <TableColumn fx:id="descriptionColumnInCreateWorkshop" prefWidth="110.39996337890625" text="Club Id" />
+                  <TableColumn fx:id="dateColumnInCreateWorkshop" prefWidth="96.79995727539062" text="Date" />
+                  <TableColumn fx:id="timeColumnInCreateWorkshop" text="Time" />
+                  <TableColumn fx:id="conductorColumnInCreateWorkshop" prefWidth="110.4000244140625" text="Conductor" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <Pane fx:id="selectUpdateEventTypePane" prefHeight="551.0" prefWidth="758.0" visible="false">
+         <children>
+            <ImageView fitHeight="621.0" fitWidth="435.0" layoutX="323.0" layoutY="-64.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/27ca4beb925c849b2f30b3d93a607003.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="33.0" layoutY="29.0" text="Update Event Pane">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <Button layoutX="26.0" layoutY="101.0" mnemonicParsing="false" onAction="#onEventBtnClickInselecttoupdate" prefHeight="43.0" prefWidth="159.0" text="Event" />
+            <Button layoutX="28.0" layoutY="181.0" mnemonicParsing="false" onAction="#onMeetingBtnClickInselecttoupdate" prefHeight="43.0" prefWidth="159.0" text="Meeting" />
+            <Button layoutX="26.0" layoutY="254.0" mnemonicParsing="false" onAction="#onWorkshopBtnClickInselecttoupdate" prefHeight="43.0" prefWidth="159.0" text="Workshop" />
+            <Button layoutX="26.0" layoutY="477.0" mnemonicParsing="false" onAction="#onBackBtnClickInselecttoupdate" prefHeight="40.0" prefWidth="159.0" text="back" />
+         </children>
+      </Pane>
+      <Pane fx:id="updateEvenetPane" layoutX="-2.0" layoutY="1.0" prefHeight="550.0" prefWidth="758.0" visible="false">
+         <children>
+            <Label layoutX="28.0" layoutY="14.0" prefHeight="38.0" prefWidth="249.0" text="Update Event Details">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="28.0" layoutY="74.0" text="Search Event By ID">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="searchFieldInUpdate" layoutX="28.0" layoutY="112.0" prefHeight="38.0" prefWidth="194.0" promptText="Event ID" />
+            <TextField fx:id="eventIdInUpdate" layoutX="551.0" layoutY="74.0" prefHeight="38.0" prefWidth="194.0" promptText="Event ID" />
+            <TextField fx:id="eventNameInUpdate" layoutX="554.0" layoutY="131.0" prefHeight="38.0" prefWidth="191.0" promptText="Event Name" />
+            <TextField fx:id="eventLocationInUpdate" layoutX="554.0" layoutY="181.0" prefHeight="38.0" prefWidth="191.0" promptText="Location" />
+            <TextField fx:id="eventDescriptionInUpdate" layoutX="554.0" layoutY="296.0" prefHeight="38.0" prefWidth="191.0" promptText="club Id" />
+            <TextField fx:id="eventTimeInUpdate" layoutX="554.0" layoutY="237.0" prefHeight="38.0" prefWidth="191.0" promptText="Time" />
+            <DatePicker fx:id="dateInUpdate" layoutX="554.0" layoutY="423.0" prefHeight="32.0" prefWidth="196.0" promptText="Date" />
+            <Button layoutX="28.0" layoutY="169.0" mnemonicParsing="false" onAction="#searchEventIdInUpdate" text="Search" />
+            <Button layoutX="648.0" layoutY="501.0" mnemonicParsing="false" onAction="#onSaveBtnClickInUpdateevents" prefHeight="30.0" prefWidth="75.0" text="Save" />
+            <Button layoutX="40.0" layoutY="501.0" mnemonicParsing="false" onAction="#backBtnInUpdateEventPane" prefHeight="30.0" prefWidth="113.0" text="Back" />
+            <Button layoutX="490.0" layoutY="501.0" mnemonicParsing="false" onAction="#deleteEventBtnClick" text="Delete Event" />
+            <TextField fx:id="eventTypeInUpdate" layoutX="554.0" layoutY="363.0" prefHeight="26.0" prefWidth="191.0" promptText="Event type" />
+            <TableView fx:id="updateEventTable" layoutX="10.0" layoutY="212.0" prefHeight="234.0" prefWidth="531.0">
+              <columns>
+                <TableColumn fx:id="eventIdUpdateEvents" prefWidth="75.0" text="Event Id" />
+                <TableColumn fx:id="eventNameUpdateEvents" prefWidth="75.0" text="Name" />
+                  <TableColumn fx:id="eventLocationUpdateEvents" prefWidth="75.0" text="Location" />
+                  <TableColumn fx:id="eventDescriptionUpdateEvents" prefWidth="75.0" text="Club Id" />
+                  <TableColumn fx:id="eventDateUpdateEvents" prefWidth="75.0" text="Date" />
+                  <TableColumn fx:id="eventTimeUpdateEvents" prefWidth="61.5999755859375" text="Time" />
+                  <TableColumn fx:id="eventTypeUpdateEvents" prefWidth="76.80001831054688" text="Event Type" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <Pane fx:id="updateMeetingPane" prefHeight="551.0" prefWidth="758.0" visible="false">
+         <children>
+            <Label layoutX="20.0" layoutY="14.0" text="Update Meeting Details">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="22.0" layoutY="70.0" text="Search Meeting By Id">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Label>
+            <TextField fx:id="searchidFieldInMeeting" layoutX="22.0" layoutY="112.0" promptText="Meeting id" />
+            <Button layoutX="224.0" layoutY="109.0" mnemonicParsing="false" onAction="#onSearchBtnInmeetingUpdate" text="Search" />
+            <TextField fx:id="meetingIdInUpdate" layoutX="578.0" layoutY="67.0" promptText="Meeting id" />
+            <TextField fx:id="meetingnameInUpdate" layoutX="578.0" layoutY="112.0" promptText="Meeting name" />
+            <TextField fx:id="meetinglocationInUpdate" layoutX="578.0" layoutY="164.0" promptText="Location" />
+            <TextField fx:id="meetingtimeInUpdate" layoutX="578.0" layoutY="212.0" promptText="Time" />
+            <TextField fx:id="meetingdescriptionInUpdate" layoutX="578.0" layoutY="263.0" promptText="Club Id" />
+            <TextField fx:id="meetingtypeInUpdate" layoutX="578.0" layoutY="312.0" promptText="Meeting type" />
+            <DatePicker fx:id="meetingdateInUpdate" layoutX="578.0" layoutY="369.0" prefHeight="26.0" prefWidth="159.0" promptText="date" />
+            <Button layoutX="495.0" layoutY="466.0" mnemonicParsing="false" onAction="#deleteMeetingdetailsClick" prefHeight="30.0" prefWidth="88.0" text="Delete event" />
+            <Button layoutX="640.0" layoutY="466.0" mnemonicParsing="false" onAction="#onsavebtninupdatemeeting" prefHeight="30.0" prefWidth="88.0" text="Save" />
+            <Button layoutX="44.0" layoutY="466.0" mnemonicParsing="false" onAction="#backBtnInUpdateMeeting" prefHeight="30.0" prefWidth="123.0" text="back" />
+            <TableView fx:id="updateMeetingTable" layoutX="14.0" layoutY="169.0" prefHeight="256.0" prefWidth="544.0">
+              <columns>
+                <TableColumn fx:id="idInUpdateMeeting" prefWidth="75.0" text="Meeting Id" />
+                <TableColumn fx:id="nameInUpdateMeeting" prefWidth="75.0" text="Name" />
+                  <TableColumn fx:id="locationInUpdateMeeting" prefWidth="75.0" text="Location" />
+                  <TableColumn fx:id="descriptionInUpdateMeeting" prefWidth="75.0" text="Club Id" />
+                  <TableColumn fx:id="dateInUpdateMeeting" prefWidth="75.0" text="Date" />
+                  <TableColumn fx:id="timeInUpdateMeeting" prefWidth="75.0" text="Time" />
+                  <TableColumn fx:id="meetingTypeInUpdateMeeting" prefWidth="91.99996948242188" text="Meeting Type" />
+              </columns>
+            </TableView>
+         </children></Pane>
+      <Pane fx:id="updateWorkshopPane" prefHeight="550.0" prefWidth="758.0" visible="false">
+         <children>
+            <Label layoutX="26.0" layoutY="14.0" text="Update Workshop Details">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="26.0" layoutY="70.0" text="Search Workshop By Id">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <TextField fx:id="workshopIdInSearchField" layoutX="26.0" layoutY="102.0" prefHeight="32.0" prefWidth="159.0" promptText="workshop id" />
+            <Button layoutX="230.0" layoutY="103.0" mnemonicParsing="false" onAction="#searchBtnInUpdateWorkshop" text="Search" />
+            <TextField fx:id="workshopidInupdate" layoutX="591.0" layoutY="67.0" promptText="workshop id" />
+            <TextField fx:id="workshopnameInupdate" layoutX="591.0" layoutY="120.0" promptText="workshop name" />
+            <TextField fx:id="workshoplocationInupdate" layoutX="591.0" layoutY="172.0" promptText="location" />
+            <TextField fx:id="workshoptimeInupdate" layoutX="591.0" layoutY="225.0" promptText="time" />
+            <TextField fx:id="workshopdescriptionInupdate" layoutX="591.0" layoutY="275.0" promptText="Club Id" />
+            <TextField fx:id="workshopconductorInupdate" layoutX="591.0" layoutY="326.0" promptText="Conductor" />
+            <DatePicker fx:id="workshopdateInupdate" layoutX="591.0" layoutY="385.0" prefHeight="26.0" prefWidth="151.0" promptText="Date" />
+            <Button layoutX="450.0" layoutY="484.0" mnemonicParsing="false" onAction="#deleteWorkshopbtninupdate" text="Delete workshop" />
+            <Button layoutX="667.0" layoutY="484.0" mnemonicParsing="false" onAction="#saveWorkshopbtninupdate" text="save" />
+            <Button layoutX="52.0" layoutY="484.0" mnemonicParsing="false" onAction="#backWorkshopbtninupdate" prefHeight="30.0" prefWidth="151.0" text="back" />
+            <TableView fx:id="workshopTableInUpdate" layoutX="18.0" layoutY="187.0" prefHeight="234.0" prefWidth="559.0">
+              <columns>
+                <TableColumn fx:id="idInUpdateWorkshop" prefWidth="90.39999198913574" text="Workshop Id" />
+                <TableColumn fx:id="nameInUpdateWorkshop" prefWidth="72.8000259399414" text="Name" />
+                  <TableColumn fx:id="locationInUpdateWorkshop" prefWidth="84.800048828125" text="Location" />
+                  <TableColumn fx:id="descriptionInUpdateWorkshop" prefWidth="75.199951171875" text="Club Id" />
+                  <TableColumn fx:id="dateInUpdateWorkshop" prefWidth="76.79998779296875" text="Date" />
+                  <TableColumn fx:id="timeInUpdateWorkshop" prefWidth="68.79998779296875" text="Time" />
+                  <TableColumn fx:id="conductorInUpdateWorkshop" prefWidth="92.79989624023438" text="Conductor" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
